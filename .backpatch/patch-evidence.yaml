@@ -1,6 +1,6 @@
 schema: osera-patch-evidence/0.1.0
 producer: moderne
-release: 2.7.18.1-backpatch-00005
+release: 2.7.18.1-backpatch-00006
 baseline: v2.7.18+backpatch.baseline
 fixes:
   - cve: CVE-2026-41717
@@ -27,11 +27,16 @@ fixes:
     upstream: https://nvd.nist.gov/vuln/detail/CVE-2026-41719
     artifacts:
       - org.springframework.data:spring-data-keyvalue
-    note: New in this release; ported onto 2.7.18; fixed at 2.7.18.1-backpatch-00005 (backpatch-spring-data-keyvalue@aecb98f).
+    note: Carried from 2.7.18.1-backpatch-00005; ported onto 2.7.18; fixed at 2.7.18.1-backpatch-00005 (backpatch-spring-data-keyvalue@aecb98f).
+  - cve: CVE-2026-41696
+    upstream: https://nvd.nist.gov/vuln/detail/CVE-2026-41696
+    artifacts:
+      - org.springframework.data:spring-data-mongodb
+    note: New in this release; ported onto 2.7.18; fixed at 3.4.18.1-backpatch-00006 (backpatch-spring-data-mongodb@0c81183).
 tests:
   commit: aecb98f2b5b144534589b2d0b97f6277bddcd7b9
   command: mvn -B -q test -Dmaven.javadoc.skip=true -Denforcer.skip=true -Dgpg.skip=true
   runtime: OpenJDK 1.8.0_372 (Zulu), Apache Maven 3.9.14
   report: spring-data-keyvalue-2.7.18.1-backpatch-00005-tests.zip
   result: pass
-  note: the fix commits touched no test file; the suite of spring-data-keyvalue at the release commit, 0 test(s) run, 0 failed
+  note: unchanged in this release; the fix commits touched no test file; the suite of spring-data-keyvalue at the release commit, 0 test(s) run, 0 failed
