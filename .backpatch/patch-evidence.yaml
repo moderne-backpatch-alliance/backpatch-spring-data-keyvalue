@@ -1,6 +1,6 @@
 schema: osera-patch-evidence/0.1.0
 producer: moderne
-release: 2.7.18.1-backpatch-00002
+release: 2.7.18.1-backpatch-00003
 baseline: v2.7.18+backpatch.baseline
 fixes:
   - cve: CVE-2026-41717
@@ -12,11 +12,16 @@ fixes:
     upstream: https://nvd.nist.gov/vuln/detail/CVE-2026-41729
     artifacts:
       - org.springframework.data:spring-data-rest-webmvc
-    note: New in this release; ported onto 2.7.18; fixed at 3.7.18.1-backpatch-00002 (backpatch-spring-data-rest@03edf5c).
+    note: Carried from 2.7.18.1-backpatch-00002; ported onto 2.7.18; fixed at 3.7.18.1-backpatch-00002 (backpatch-spring-data-rest@03edf5c).
+  - cve: CVE-2026-41716
+    upstream: https://nvd.nist.gov/vuln/detail/CVE-2026-41716
+    artifacts:
+      - org.springframework.data:spring-data-commons
+    note: New in this release; ported onto 2.7.18; fixed at 2.7.18.1-backpatch-00003 (backpatch-spring-data-commons@cbb399a).
 tests:
   commit: e7a1bc1c87b5225d97327b064eecf6e48f180560
   command: mvn -B -q test -Dmaven.javadoc.skip=true -Denforcer.skip=true -Dgpg.skip=true
   runtime: OpenJDK 1.8.0_372 (Zulu), Apache Maven 3.9.14
-  report: spring-data-keyvalue-2.7.18.1-backpatch-00002-tests.zip
+  report: spring-data-keyvalue-2.7.18.1-backpatch-00003-tests.zip
   result: pass
   note: no source change in this repository up to this release, the tree at the tag is the upstream baseline plus the OSERA plumbing; the upstream suite of spring-data-keyvalue at the release commit, 0 test(s) run, 0 failed
