@@ -1,6 +1,6 @@
 schema: osera-patch-evidence/0.1.0
 producer: moderne
-release: 2.7.18.1-backpatch-00008
+release: 2.7.18.1-backpatch-00009
 baseline: v2.7.18+backpatch.baseline
 fixes:
   - cve: CVE-2026-41717
@@ -59,10 +59,19 @@ fixes:
     artifacts:
       - org.springframework.data:spring-data-rest-webmvc
     note: Carried from 2.7.18.1-backpatch-00007; ported onto 2.7.18; fixed at 3.7.18.1-backpatch-00007 (backpatch-spring-data-rest@45e7ea5).
+  - cve: CVE-2026-41711
+    upstream_fix_url: https://github.com/spring-projects/spring-data-commons/commit/c3b2abf2968d6fdbd4bbbecf58fec0832ea69755
+    advisory_url: https://nvd.nist.gov/vuln/detail/CVE-2026-41711
+    patch_commit_url: https://github.com/moderne-backpatch-alliance/backpatch-spring-data-commons/commit/39f2e2b
+    basis: adapted
+    artifacts:
+      - org.springframework.data:spring-data-commons
+    note: New in this release; ported onto 2.7.18; fixed at 2.7.18.1-backpatch-00009 (backpatch-spring-data-commons@39f2e2b).
 tests:
-  commit: 65f064666e4a740c974474c32bc35aecc0e7911e
+  commit: e102cbdcdb07ef4589e7a40a620f5f61692b2328
   command: none in this repository
   runtime: none, no build or test ran for this release
-  report: carried, see the evidence of the release named in the note
+  report: spring-data-commons-2.7.18.1-backpatch-00009-tests.zip
+  report_sha256: f675a378b4fec07781c4fcde14d5c68b011791cf8dbd642cdbe60982bd3c4f92
   result: pass
-  note: "this release is a tooling update, it carries no new fix, nothing ran here; its test provenance is tooling-2026-11-03-spring-data-2021.2: a tooling update of moderne-backpatch-alliance/backpatch-spring-data-bom at v2021.2.18.1-backpatch-00007, whose .backpatch/patch-evidence.yaml says what ran"
+  note: this release changes only the versions this repository pins, nothing ran here; its test provenance is CVE-2026-41711 carried by moderne-backpatch-alliance/backpatch-spring-data-commons at v2.7.18.1-backpatch-00009, whose .backpatch/patch-evidence.yaml records the tests that ran
